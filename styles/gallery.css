@@ -1,0 +1,37 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 100%; /* Добавьте это свойство */
+}
+
+.gallery a {
+    flex: calc(33% - 10px); /* 10px - это половина разрыва между элементами */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.gallery a:hover {
+    transform: scale(1.05);
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+
+/* Медиазапрос для изменения структуры при снижении ширины экрана */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery a {
+        flex: none;
+    }
+}
